@@ -41,13 +41,13 @@ def is_valid(date):
     return True
 
 
-def get_date(num):
+def get_date(number):
     """
     get the date from the user
-    :param num: string of the sequence number of the input
+    :param number: string of the sequence number of the input
     :return: the date
     """
-    date = input("enter the " + num + " date: (in DD/MM/YYYY) ")
+    date = input("enter the " + number + " date: (in DD/MM/YYYY) ")
     while not is_valid(date):
         date = input("wrong input try again")
     return datetime.datetime.strptime(date, "%d/%m/%Y").date()
@@ -60,11 +60,11 @@ def vinigrate():
     If the date falls on a Monday, print: "I have no vinaigrette!"
     :return:
     """
-    first_date = get_date("first")
-    second_date = get_date("second")
-    rand_date = random_date(first_date, second_date)
-    print(rand_date)
-    if rand_date.strftime('%A') == "Monday":
+    start_date = get_date("start")
+    end_date = get_date("end")
+    randomly_date = random_date(start_date, end_date)
+    print(randomly_date)
+    if randomly_date.strftime('%A') == "Monday":
         print("אין לי ויניגרט!")
 
 
